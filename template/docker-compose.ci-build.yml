@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  react-app:
+    container_name: ${CREATE_REACT_APP_NAME:-cra-finch-template}
+    build:
+      context: .
+      dockerfile: docker/production.dockerfile
+    ports:
+      - '1337:80'

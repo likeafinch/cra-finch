@@ -1,0 +1,130 @@
+{
+  "package": {
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "test:ci": "react-scripts test --watchAll=false -u",
+      "storybook": "start-storybook -p 6006 -s public",
+      "build-storybook": "build-storybook -s public",
+      "format": "prettier \"**/*.js\" --write",
+      "lint": "eslint --ext .js --ignore-path .gitignore ./",
+      "lint:fix": "npm run format && eslint --fix --ext .js --ignore-path .gitignore ./",
+      "commit:pre": "npm run lint:fix && npm run test:ci && git add ."
+    },
+    "dependencies": {
+      "@babel/polyfill": "latest",
+      "@emotion/react": "latest",
+      "@emotion/styled": "latest",
+      "@fontsource/source-sans-pro": "latest",
+      "@testing-library/jest-dom": "latest",
+      "@testing-library/user-event": "latest",
+      "date-fns": "latest",
+      "framer-motion": "latest",
+      "jotai": "latest",
+      "prop-types": "latest",
+      "react": "latest",
+      "react-dom": "latest",
+      "react-scripts": "latest",
+      "react-toastify": "latest",
+      "tailwindcss": "latest",
+      "twin.macro": "latest",
+      "web-vitals": "latest"
+    },
+    "devDependencies": {
+      "@babel/cli": "latest",
+      "@babel/core": "latest",
+      "@babel/plugin-transform-runtime": "latest",
+      "@babel/preset-env": "latest",
+      "@emotion/babel-plugin": "latest",
+      "@emotion/eslint-plugin": "latest",
+      "@emotion/jest": "latest",
+      "@storybook/addon-actions": "latest",
+      "@storybook/addon-essentials": "latest",
+      "@storybook/addon-links": "latest",
+      "@storybook/addons": "latest",
+      "@storybook/node-logger": "latest",
+      "@storybook/preset-create-react-app": "latest",
+      "@storybook/react": "latest",
+      "@storybook/theming": "latest",
+      "@testing-library/react": "latest",
+      "@testing-library/react-hooks": "latest",
+      "babel-loader": "latest",
+      "babel-plugin-twin": "latest",
+      "eslint-plugin-react": "latest",
+      "eslint-plugin-react-hooks": "latest",
+      "jest": "latest",
+      "pre-commit": "latest",
+      "prettier": "latest",
+      "mini-css-extract-plugin": "2.4.5"
+    },
+    "pre-commit": [
+      "commit:pre"
+    ],
+    "babel": {
+      "plugins": [
+        "babel-plugin-twin",
+        "babel-plugin-macros",
+        "@babel/plugin-transform-runtime",
+        [
+          "@emotion",
+          {
+            "autoLabel": "always"
+          }
+        ]
+      ],
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "targets": {
+              "edge": "17",
+              "firefox": "60",
+              "chrome": "67",
+              "safari": "11.1"
+            },
+            "useBuiltIns": "usage",
+            "corejs": "3.6.5"
+          }
+        ],
+        "@babel/preset-react"
+      ]
+    },
+    "babelMacros": {
+      "twin": {
+        "preset": "emotion"
+      }
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "eslint:recommended"
+      ],
+      "plugins": [
+        "react-hooks"
+      ],
+      "rules": {
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/prop-types": "error",
+        "no-mixed-spaces-and-tabs": "off"
+      },
+      "overrides": [
+        {
+          "files": [
+            "**/*.stories.*"
+          ],
+          "rules": {
+            "import/no-anonymous-default-export": "off"
+          }
+        }
+      ]
+    },
+    "overrides": {
+      "mini-css-extract-plugin": "2.4.5"
+    }
+  }
+}

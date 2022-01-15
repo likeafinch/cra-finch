@@ -1,0 +1,33 @@
+{
+  "name": "cra-finch",
+  "version": "1.0.0",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "template",
+    "twin.macro",
+    "emotion",
+    "framer/motion",
+    "jotai",
+    "date-fns",
+    "react-toastify",
+    "pre-commit",
+    "prettier",
+    "jest",
+    "storybook"
+  ],
+  "description": "Full Finch Javascript Create React Template.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=17"
+  },
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "author": {
+    "email": "emery.atticus@gmail.com",
+    "name": "Atticus Emery",
+    "url": "https://github.com/likeafinch"
+  }
+}
